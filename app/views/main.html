@@ -1,0 +1,23 @@
+<div class="row marketing">
+  <h2 class="pull-left">Messages</h2>
+
+  <div class="pull-right options">
+    <i ng-if="main.unseenMessage" class="glyphicon glyphicon-bell">
+    </i>
+  </div>
+  
+  <div class="clearfix"></div>
+
+  <div class="messages">
+    <div class="message" ng-repeat="message in main.messages">
+      {{ message.user }}: {{ message.content }}
+    </div>
+  </div>
+
+  <form name="messageInputForm" ng-submit="main.sendMessage()" class="message-input">
+    <input type="text" ng-model="main.message.content" id="message_input">
+    <button class="btn btn-success">
+      <i class="glyphicon glyphicon-send"></i>
+    </button>
+  </div>
+</div>
